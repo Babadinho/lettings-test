@@ -1,0 +1,16 @@
+{
+  "name": "lettings-test",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "compile-sass": "node-sass styles/main.scss css/style.css",
+    "watch": "nodemon -e scss -x 'npm run compile-sass'"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "node-sass": "^9.0.0",
+    "nodemon": "^3.0.1"
+  }
+}
