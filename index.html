@@ -14,8 +14,22 @@
 
 <body>
     <section class="main">
-        <div class="date">
-
+        <div class="notice">
+            <h1 class="notice__greet">Howdy Donald!</h1>
+            <div class="notice__info">
+                <p class="notice__total">
+                    <i class="fa-solid fa-table-list"></i> Total Tasks:
+                    <span></span>
+                </p>
+                <p class="notice__upcoming">
+                    <i class="fa-solid fa-calendar-check"></i> Upcoming:
+                    <span></span>
+                </p>
+                <p class="notice__expired">
+                    <i class="fa-solid fa-circle-xmark"></i> Expired:
+                    <span></span>
+                </p>
+            </div>
         </div>
         <div class="main__row">
             <div class="task">
@@ -65,6 +79,7 @@
     </section>
 
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script type="module" src="/notice.js"></script>
     <script type="module" src="/calender.js"></script>
     <script type="module" src="/task.js"></script>
 

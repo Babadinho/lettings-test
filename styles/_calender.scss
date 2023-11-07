@@ -82,8 +82,8 @@
       &::before {
         position: absolute;
         content: '';
-        height: 2.3rem;
-        width: 2.3rem;
+        height: 2.2rem;
+        width: 2.2rem;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
@@ -93,18 +93,26 @@
 
       & span {
         position: absolute;
-        top: 3px;
-        right: 0px;
-        font-size: 0.8rem;
+        top: 6px;
+        right: 11px;
+        font-size: 0.7rem;
         color: $color-white;
       }
 
-      & .on {
+      & .upcoming {
+        color: $color-white;
+        font-weight: 600;
         background-color: #04aa6d;
+        border-radius: 1rem;
+        padding: 2px 5px;
       }
 
       & .expired {
+        color: $color-white;
+        font-weight: 600;
         background-color: crimson;
+        border-radius: 1rem;
+        padding: 2px 5px;
       }
     }
 

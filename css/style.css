@@ -20,13 +20,34 @@ body {
     gap: 2rem;
     margin-top: 2rem; }
 
-.date {
+.notice {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   border-radius: 5px;
   padding: 20px;
   background-color: #ffffff;
   width: 100%;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
   margin-top: 5rem; }
+  .notice h1 {
+    font-size: 2rem;
+    font-weight: 500;
+    color: #171d35;
+    font-weight: 700; }
+  .notice__info {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    font-size: 1.05rem; }
+    .notice__info span {
+      font-size: 0.95rem; }
+  .notice__total i {
+    color: #56b9ca; }
+  .notice__upcoming i {
+    color: #04aa6d; }
+  .notice__expired i {
+    color: crimson; }
 
 .task {
   border-radius: 5px;
@@ -125,8 +146,22 @@ body {
       border-radius: 5px;
       margin-bottom: 0.5rem;
       box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px; }
+      .task__list li:hover span {
+        visibility: visible;
+        opacity: 1; }
       .task__list li p {
+        display: flex;
+        align-items: center;
         font-size: 1.1rem; }
+        .task__list li p span {
+          margin-left: 0.5rem;
+          font-size: 0.7rem;
+          color: crimson;
+          padding-bottom: 0.1rem;
+          visibility: hidden;
+          cursor: pointer;
+          opacity: 0;
+          transition: opacity 0.5s; }
       .task__list li span {
         font-size: 0.85rem;
         font-style: italic; }
@@ -192,8 +227,8 @@ body {
       .calender__days li::before {
         position: absolute;
         content: '';
-        height: 2.3rem;
-        width: 2.3rem;
+        height: 2.2rem;
+        width: 2.2rem;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
@@ -201,14 +236,22 @@ body {
         z-index: -1; }
       .calender__days li span {
         position: absolute;
-        top: 3px;
-        right: 0px;
-        font-size: 0.8rem;
+        top: 6px;
+        right: 11px;
+        font-size: 0.7rem;
         color: #ffffff; }
-      .calender__days li .on {
-        background-color: #04aa6d; }
+      .calender__days li .upcoming {
+        color: #ffffff;
+        font-weight: 600;
+        background-color: #04aa6d;
+        border-radius: 1rem;
+        padding: 2px 5px; }
       .calender__days li .expired {
-        background-color: crimson; }
+        color: #ffffff;
+        font-weight: 600;
+        background-color: crimson;
+        border-radius: 1rem;
+        padding: 2px 5px; }
     .calender__days .active {
       font-weight: 500;
       cursor: pointer;
@@ -224,6 +267,10 @@ body {
   width: 100%;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
   margin-top: 2rem; }
+
+@media screen and (max-width: 1150px) {
+  .calender__days li span {
+    right: 5px; } }
 
 @media screen and (max-width: 400px) {
   .calender {

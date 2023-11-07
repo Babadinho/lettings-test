@@ -121,8 +121,28 @@
       margin-bottom: 0.5rem;
       box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
 
+      &:hover {
+        & span {
+          visibility: visible;
+          opacity: 1;
+        }
+      }
+
       & p {
+        display: flex;
+        align-items: center;
         font-size: 1.1rem;
+
+        & span {
+          margin-left: 0.5rem;
+          font-size: 0.7rem;
+          color: crimson;
+          padding-bottom: 0.1rem;
+          visibility: hidden;
+          cursor: pointer;
+          opacity: 0;
+          transition: opacity 0.5s;
+        }
       }
 
       & span {

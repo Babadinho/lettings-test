@@ -1,0 +1,48 @@
+.notice {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 5px;
+  padding: 20px;
+  background-color: $color-white;
+  width: 100%;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
+    rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+  margin-top: 5rem;
+
+  & h1 {
+    font-size: 2rem;
+    font-weight: 500;
+    color: $color-dark;
+    font-weight: 700;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    font-size: 1.05rem;
+
+    & span {
+      font-size: 0.95rem;
+    }
+  }
+
+  &__total {
+    & i {
+      color: #56b9ca;
+    }
+  }
+
+  &__upcoming {
+    & i {
+      color: #04aa6d;
+    }
+  }
+
+  &__expired {
+    & i {
+      color: crimson;
+    }
+  }
+}

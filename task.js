@@ -9,39 +9,71 @@ const closeModalButton = document.getElementById('closeModal');
 // load tasks from localStorage
 function loadTasks() {
   const storedTasks = JSON.parse(localStorage.getItem('tasks')) || [];
-  storedTasks.forEach((task) => {
-    createTaskElement(task.text, new Date(task.dueDate));
-  });
+  if (storedTasks.length === 0) {
+    const noTasksMessage = document.createElement('p');
+    noTasksMessage.textContent = 'No tasks yet';
+    noTasksMessage.style.fontStyle = 'italic';
+    tasksList.appendChild(noTasksMessage);
+  } else {
+    storedTasks.forEach((task) => {
+      createTaskElement(task.text, new Date(task.dueDate));
+    });
+  }
 }
 
 // function to save task
 function saveTasks() {
   const taskElements = tasksList.querySelectorAll('li');
   const tasks = Array.from(taskElements).map((taskElement) => ({
-    text: taskElement.textContent,
+    text: taskElement.querySelector('p').textContent,
     dueDate: taskElement.dataset.dueDate,
   }));
   localStorage.setItem('tasks', JSON.stringify(tasks));
 }
 
 // function to create task
-function createTaskElement(taskText) {
+function createTaskElement(taskText, dueDate) {
   const taskItem = document.createElement('li');
   const taskTextParagraph = document.createElement('p');
+  const taskAction = document.createElement('span');
+  taskAction.innerHTML = '<i class="fa-solid fa-trash"></i>';
   taskTextParagraph.textContent = taskText;
+  taskTextParagraph.appendChild(taskAction);
   taskItem.appendChild(taskTextParagraph);
 
-  const storedTasks = JSON.parse(localStorage.getItem('tasks')) || [];
-  const matchingTask = storedTasks.find((task) => task.text === taskText);
-  if (matchingTask) {
-    const dueDate = new Date(matchingTask.dueDate);
+  if (dueDate instanceof Date && !isNaN(dueDate)) {
     const dueDateSpan = document.createElement('span');
-    dueDateSpan.textContent = `${dueDate.toDateString()}`;
+    dueDateSpan.textContent = dueDate.toDateString();
     taskItem.appendChild(dueDateSpan);
+    taskItem.dataset.dueDate = dueDate.toISOString();
   }
 
   tasksList.appendChild(taskItem);
 }
+
+function deleteTask(taskItem) {
+  const taskElements = tasksList.querySelectorAll('li');
+  const tasks = Array.from(taskElements).filter(
+    (taskElement) => taskElement !== taskItem
+  );
+
+  // Remove the task from the tasks list
+  tasksList.removeChild(taskItem);
+
+  // Update the tasks in localStorage
+  const updatedTasks = tasks.map((taskElement) => ({
+    text: taskElement.querySelector('p').textContent,
+    dueDate: taskElement.dataset.dueDate,
+  }));
+  localStorage.setItem('tasks', JSON.stringify(updatedTasks));
+}
+
+tasksList.addEventListener('click', (event) => {
+  if (event.target.classList.contains('fa-trash')) {
+    const taskItem = event.target.closest('li');
+    deleteTask(taskItem);
+  }
+});
 
 addTaskButton.addEventListener('click', () => {
   taskModal.style.display = 'block';
@@ -60,6 +92,11 @@ window.addEventListener('click', (event) => {
 addTaskButtonModal.addEventListener('click', () => {
   const taskText = taskInputModal.value;
   const dueDate = taskDueDateInput._flatpickr.selectedDates[0];
+
+  const noTasksMessage = tasksList.querySelector('p');
+  if (noTasksMessage && tasksList.querySelectorAll('li').length === 0) {
+    tasksList.removeChild(noTasksMessage);
+  }
 
   if (taskText.trim() !== '' && dueDate) {
     createTaskElement(taskText, dueDate);

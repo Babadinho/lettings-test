@@ -94,7 +94,7 @@ function displayTaskCounts() {
       if (today > new Date(dayDate)) {
         spanElement.classList.add('expired');
       } else {
-        spanElement.classList.add('on');
+        spanElement.classList.add('upcoming');
       }
     }
 
