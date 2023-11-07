@@ -10,7 +10,53 @@
   }
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 900px) {
+  .main {
+    &__row {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+  }
+
+  .notice {
+    flex-direction: column;
+
+    & h1 {
+      margin-bottom: 1.7rem;
+      text-align: center;
+    }
+
+    &__info {
+      font-size: 1rem;
+      white-space: nowrap;
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .news {
+    &__list {
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+
+      & li {
+        & a {
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .notice {
+    flex-direction: column;
+
+    &__info {
+      flex-direction: column;
+    }
+  }
+
   .calender {
     padding: 0px 0.5rem;
     &__icons {

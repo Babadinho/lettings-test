@@ -3,7 +3,7 @@
   justify-content: space-between;
   align-items: center;
   border-radius: 5px;
-  padding: 20px;
+  padding: 20px 44px;
   background-color: $color-white;
   width: 100%;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
@@ -30,19 +30,19 @@
 
   &__total {
     & i {
-      color: #56b9ca;
+      color: $color-blue;
     }
   }
 
   &__upcoming {
     & i {
-      color: #04aa6d;
+      color: $color-green;
     }
   }
 
   &__expired {
     & i {
-      color: crimson;
+      color: $color-yellow;
     }
   }
 }

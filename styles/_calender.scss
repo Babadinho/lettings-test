@@ -33,7 +33,7 @@
       background-color: $color-white;
       color: $color-dark;
       border-radius: 50%;
-      color: #56b9ca;
+      color: $color-blue;
     }
   }
 
@@ -102,7 +102,7 @@
       & .upcoming {
         color: $color-white;
         font-weight: 600;
-        background-color: #04aa6d;
+        background-color: $color-green;
         border-radius: 1rem;
         padding: 2px 5px;
       }
@@ -110,7 +110,7 @@
       & .expired {
         color: $color-white;
         font-weight: 600;
-        background-color: crimson;
+        background-color: $color-yellow;
         border-radius: 1rem;
         padding: 2px 5px;
       }
@@ -122,7 +122,7 @@
       color: $color-white;
       &::before {
         transition: all 0.2s;
-        background-color: #56b9ca;
+        background-color: $color-blue;
       }
     }
   }

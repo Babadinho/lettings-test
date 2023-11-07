@@ -25,7 +25,7 @@ body {
   justify-content: space-between;
   align-items: center;
   border-radius: 5px;
-  padding: 20px;
+  padding: 20px 44px;
   background-color: #ffffff;
   width: 100%;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
@@ -47,7 +47,7 @@ body {
   .notice__upcoming i {
     color: #04aa6d; }
   .notice__expired i {
-    color: crimson; }
+    color: #ffd744; }
 
 .task {
   border-radius: 5px;
@@ -88,7 +88,7 @@ body {
       top: 30%;
       left: 50%;
       transform: translate(-50%, -50%);
-      background-color: #fff;
+      background-color: #ffffff;
       padding: 30px;
       border-radius: 5px;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
@@ -113,7 +113,7 @@ body {
       font-size: 0.9rem; }
     .task__modal--button {
       background-color: #56b9ca;
-      color: #fff;
+      color: #ffffff;
       border: none;
       padding: 15px 20px;
       border-radius: 5px;
@@ -142,17 +142,18 @@ body {
     .task__list li {
       display: flex;
       justify-content: space-between;
-      padding: 15px 8px;
+      padding: 15px 10px;
       border-radius: 5px;
       margin-bottom: 0.5rem;
-      box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px; }
+      box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px; }
       .task__list li:hover span {
         visibility: visible;
         opacity: 1; }
       .task__list li p {
         display: flex;
         align-items: center;
-        font-size: 1.1rem; }
+        font-size: 1rem;
+        font-weight: 600; }
         .task__list li p span {
           margin-left: 0.5rem;
           font-size: 0.7rem;
@@ -249,7 +250,7 @@ body {
       .calender__days li .expired {
         color: #ffffff;
         font-weight: 600;
-        background-color: crimson;
+        background-color: #ffd744;
         border-radius: 1rem;
         padding: 2px 5px; }
     .calender__days .active {
@@ -262,17 +263,71 @@ body {
 
 .news {
   border-radius: 5px;
-  padding: 20px;
+  padding: 44px;
   background-color: #ffffff;
   width: 100%;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
-  margin-top: 2rem; }
+  margin-top: 2rem;
+  margin-bottom: 6rem; }
+  .news h3 {
+    font-size: 1.6rem;
+    font-weight: 500;
+    color: #171d35;
+    font-weight: 700;
+    margin-bottom: 2rem; }
+  .news__list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    grid-gap: 38px; }
+    .news__list li {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      gap: 1rem;
+      padding: 20px 25px;
+      border-radius: 5px;
+      box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px; }
+      .news__list li a {
+        text-decoration: none;
+        font-size: 1.05rem;
+        font-weight: 600;
+        color: #171d35; }
+        .news__list li a:hover {
+          color: #56b9ca; }
+      .news__list li span {
+        font-size: 0.96rem;
+        font-style: italic; }
 
 @media screen and (max-width: 1150px) {
   .calender__days li span {
     right: 5px; } }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 900px) {
+  .main__row {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin-top: 2rem; }
+  .notice {
+    flex-direction: column; }
+    .notice h1 {
+      margin-bottom: 1.7rem;
+      text-align: center; }
+    .notice__info {
+      font-size: 1rem;
+      white-space: nowrap; } }
+
+@media screen and (max-width: 600px) {
+  .news__list {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); }
+    .news__list li a {
+      font-size: 1rem; } }
+
+@media screen and (max-width: 450px) {
+  .notice {
+    flex-direction: column; }
+    .notice__info {
+      flex-direction: column; }
   .calender {
     padding: 0px 0.5rem; }
     .calender__icons {
