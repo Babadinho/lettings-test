@@ -111,4 +111,26 @@
       }
     }
   }
+
+  .hero {
+    & h1 {
+      color: $color-light;
+    }
+
+    & p {
+      color: $color-lightGray;
+    }
+
+    & input {
+      background-color: $color-gray;
+      color: $color-light;
+      border: none;
+    }
+  }
+
+  .faq {
+    & h2 {
+      color: $color-light;
+    }
+  }
 }
