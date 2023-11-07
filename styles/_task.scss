@@ -86,7 +86,12 @@
       cursor: pointer;
       width: 100%;
       font-size: 1rem;
-      text-transform: uppercase;
+      font-weight: 600;
+      text-transform: capitalize;
+
+      &:hover {
+        opacity: 0.9;
+      }
     }
 
     &--due {

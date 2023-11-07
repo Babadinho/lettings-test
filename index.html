@@ -13,6 +13,16 @@
 </head>
 
 <body>
+    <header>
+        <div class="toggle">
+            <input type="checkbox" class="checkbox" id="checkbox">
+            <label for="checkbox" class="label">
+                <i class="fa-solid fa-moon"></i>
+                <i class="fa-solid fa-sun"></i>
+                <div class='ball'></div>
+            </label>
+        </div>
+    </header>
     <section class="main">
         <div class="notice">
             <h1 class="notice__greet">Howdy Donald!</h1>
@@ -40,7 +50,7 @@
                     </div>
                 </div>
                 <div class="task__body">
-                    <ul class="task__list"></ul>
+                    <ol class="task__list"></ol>
                 </div>
                 <div class="task__modal" id="taskModal">
                     <div class="task__modal--content">
@@ -86,6 +96,7 @@
     <script type="module" src="/calender.js"></script>
     <script type="module" src="/task.js"></script>
     <script type="module" src="/news.js"></script>
+    <script type="module" src="/toggle.js"></script>
 
 </body>
 

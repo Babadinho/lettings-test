@@ -1,0 +1,114 @@
+.dark-mode {
+  background-color: $color-dark;
+
+  header {
+    .label {
+      background-color: $color-gray;
+    }
+  }
+
+  .notice,
+  .task,
+  .calender,
+  .news {
+    background-color: $color-gray;
+  }
+
+  .notice {
+    color: $color-light;
+    & h1,
+    span {
+      color: $color-light;
+    }
+  }
+
+  .task {
+    &__heading {
+      color: $color-light;
+    }
+
+    &__icon {
+      & span {
+        background-color: $color-gray;
+      }
+    }
+
+    &__modal {
+      &--content {
+        background-color: $color-gray;
+
+        & h2 {
+          color: $color-light;
+        }
+      }
+
+      &--input {
+        background-color: $color-dark;
+        color: $color-light;
+        border: none;
+      }
+
+      &--due {
+        color: $color-gray;
+        background: $color-lightGray;
+        border: none;
+      }
+
+      &--close {
+        color: $color-light;
+      }
+    }
+
+    &__list {
+      color: $color-light;
+
+      & li {
+        box-shadow: rgba(255, 255, 255, 0.02) 0px 1px 3px 0px,
+          rgba(255, 255, 255, 0.15) 0px 0px 0px 1px;
+      }
+    }
+  }
+
+  .calender {
+    &__current {
+      color: $color-light;
+    }
+
+    &__icons {
+      & span {
+        background-color: $color-gray;
+      }
+    }
+
+    &__body {
+      & li {
+        color: $color-light;
+      }
+    }
+  }
+
+  .news {
+    & h3 {
+      color: $color-light;
+    }
+
+    &__list {
+      & li {
+        box-shadow: rgba(255, 255, 255, 0.02) 0px 1px 3px 0px,
+          rgba(255, 255, 255, 0.15) 0px 0px 0px 1px;
+
+        & a {
+          color: $color-light;
+
+          &:hover {
+            color: $color-blue;
+          }
+        }
+
+        & span {
+          color: $color-lightGray;
+        }
+      }
+    }
+  }
+}

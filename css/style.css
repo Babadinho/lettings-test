@@ -5,6 +5,48 @@
   padding: 0;
   box-sizing: border-box; }
 
+header {
+  max-width: 1250px;
+  margin: auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: 3rem; }
+  header .toggle {
+    margin: auto; }
+  header .checkbox {
+    opacity: 0;
+    position: absolute; }
+  header .label {
+    width: 37px;
+    height: 19px;
+    background-color: #1a202c;
+    display: flex;
+    border-radius: 50px;
+    align-items: center;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.1rem;
+    position: relative;
+    transform: scale(1.5);
+    cursor: pointer; }
+  header .ball {
+    width: 17px;
+    height: 17px;
+    background-color: #f7fafc;
+    position: absolute;
+    top: 1px;
+    left: 0.09rem;
+    border-radius: 50%;
+    transition: transform 0.2s linear; }
+  header .checkbox:checked + .label .ball {
+    transform: translateX(1.15rem); }
+  header .label i {
+    color: #f7fafc;
+    font-size: 0.95rem;
+    display: block; }
+
 body {
   font-family: 'Poppins', sans-serif;
   background-color: #f7fafc;
@@ -33,7 +75,7 @@ body {
   .notice h1 {
     font-size: 2rem;
     font-weight: 500;
-    color: #171d35;
+    color: #1a202c;
     font-weight: 700; }
   .notice__info {
     display: flex;
@@ -63,7 +105,7 @@ body {
   .task__heading {
     font-size: 1.5rem;
     font-weight: 500;
-    color: #171d35;
+    color: #1a202c;
     font-weight: 700; }
   .task__icon span {
     height: 1rem;
@@ -71,7 +113,7 @@ body {
     cursor: pointer;
     margin: 0px 0.3rem;
     background-color: #ffffff;
-    color: #171d35;
+    color: #1a202c;
     border-radius: 50%;
     color: #56b9ca; }
   .task__modal {
@@ -106,7 +148,7 @@ body {
       padding: 15px 10px;
       width: 100%;
       outline: none;
-      color: #171d35;
+      color: #1a202c;
       border: 1px solid #bbb;
       border-radius: 5px;
       display: inline-block;
@@ -120,7 +162,10 @@ body {
       cursor: pointer;
       width: 100%;
       font-size: 1rem;
-      text-transform: uppercase; }
+      font-weight: 600;
+      text-transform: capitalize; }
+      .task__modal--button:hover {
+        opacity: 0.9; }
     .task__modal--due {
       border: 1px solid #c3c3c3;
       height: 48px;
@@ -128,7 +173,7 @@ body {
       width: 100%;
       padding: 8px;
       border-radius: 5px;
-      color: #171d35;
+      color: #1a202c;
       background: #f7fafc;
       margin-bottom: 1rem;
       font-size: 0.9rem;
@@ -180,7 +225,7 @@ body {
   .calender__current {
     font-size: 1.5rem;
     font-weight: 500;
-    color: #171d35;
+    color: #1a202c;
     font-weight: 700; }
   .calender__icons {
     display: flex;
@@ -193,7 +238,7 @@ body {
       cursor: pointer;
       margin: 0px 0.3rem;
       background-color: #ffffff;
-      color: #171d35;
+      color: #1a202c;
       border-radius: 50%;
       color: #56b9ca; }
   .calender__weeks {
@@ -215,7 +260,7 @@ body {
       display: flex;
       justify-content: center;
       align-items: center;
-      color: #171d35; }
+      color: #1a202c; }
       .calender__body li:hover {
         font-weight: 500;
         cursor: pointer; }
@@ -272,7 +317,7 @@ body {
   .news h3 {
     font-size: 1.6rem;
     font-weight: 500;
-    color: #171d35;
+    color: #1a202c;
     font-weight: 700;
     margin-bottom: 2rem; }
   .news__list {
@@ -292,12 +337,13 @@ body {
         text-decoration: none;
         font-size: 1.05rem;
         font-weight: 600;
-        color: #171d35; }
+        color: #1a202c; }
         .news__list li a:hover {
           color: #56b9ca; }
       .news__list li span {
         font-size: 0.96rem;
-        font-style: italic; }
+        font-style: italic;
+        color: #2d3748; }
 
 @media screen and (max-width: 1150px) {
   .calender__days li span {
@@ -345,3 +391,56 @@ body {
       margin-bottom: 0.5rem; }
     .calender__current {
       font-size: 1.2rem; } }
+
+.dark-mode {
+  background-color: #1a202c; }
+  .dark-mode header .label {
+    background-color: #2d3748; }
+  .dark-mode .notice,
+  .dark-mode .task,
+  .dark-mode .calender,
+  .dark-mode .news {
+    background-color: #2d3748; }
+  .dark-mode .notice {
+    color: #f7fafc; }
+    .dark-mode .notice h1,
+    .dark-mode .notice span {
+      color: #f7fafc; }
+  .dark-mode .task__heading {
+    color: #f7fafc; }
+  .dark-mode .task__icon span {
+    background-color: #2d3748; }
+  .dark-mode .task__modal--content {
+    background-color: #2d3748; }
+    .dark-mode .task__modal--content h2 {
+      color: #f7fafc; }
+  .dark-mode .task__modal--input {
+    background-color: #1a202c;
+    color: #f7fafc;
+    border: none; }
+  .dark-mode .task__modal--due {
+    color: #2d3748;
+    background: #a0aec0;
+    border: none; }
+  .dark-mode .task__modal--close {
+    color: #f7fafc; }
+  .dark-mode .task__list {
+    color: #f7fafc; }
+    .dark-mode .task__list li {
+      box-shadow: rgba(255, 255, 255, 0.02) 0px 1px 3px 0px, rgba(255, 255, 255, 0.15) 0px 0px 0px 1px; }
+  .dark-mode .calender__current {
+    color: #f7fafc; }
+  .dark-mode .calender__icons span {
+    background-color: #2d3748; }
+  .dark-mode .calender__body li {
+    color: #f7fafc; }
+  .dark-mode .news h3 {
+    color: #f7fafc; }
+  .dark-mode .news__list li {
+    box-shadow: rgba(255, 255, 255, 0.02) 0px 1px 3px 0px, rgba(255, 255, 255, 0.15) 0px 0px 0px 1px; }
+    .dark-mode .news__list li a {
+      color: #f7fafc; }
+      .dark-mode .news__list li a:hover {
+        color: #56b9ca; }
+    .dark-mode .news__list li span {
+      color: #a0aec0; }
