@@ -12,10 +12,11 @@ body {
 
 .main {
   max-width: 1250px;
-  margin: auto; }
+  margin: auto;
+  padding: 20px; }
   .main__row {
     display: grid;
-    grid-template-columns: auto auto;
+    grid-template-columns: 1fr 1fr;
     gap: 2rem;
     margin-top: 2rem; }
 
@@ -33,6 +34,102 @@ body {
   background-color: #ffffff;
   width: 100%;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px; }
+  .task__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem; }
+  .task__heading {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #171d35;
+    font-weight: 700; }
+  .task__icon span {
+    height: 1rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+    margin: 0px 0.3rem;
+    background-color: #ffffff;
+    color: #171d35;
+    border-radius: 50%;
+    color: #56b9ca; }
+  .task__modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 10; }
+    .task__modal--content {
+      position: absolute;
+      top: 30%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      text-align: center;
+      z-index: 10;
+      max-width: 450px; }
+    .task__modal--close {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      font-size: 24px;
+      cursor: pointer; }
+    .task__modal--input {
+      margin: 12px 0;
+      padding: 15px 10px;
+      width: 100%;
+      outline: none;
+      color: #171d35;
+      border: 1px solid #bbb;
+      border-radius: 5px;
+      display: inline-block;
+      font-size: 0.9rem; }
+    .task__modal--button {
+      background-color: #56b9ca;
+      color: #fff;
+      border: none;
+      padding: 15px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      width: 100%;
+      font-size: 1rem;
+      text-transform: uppercase; }
+    .task__modal--due {
+      border: 1px solid #c3c3c3;
+      height: 48px;
+      line-height: 36px;
+      width: 100%;
+      padding: 8px;
+      border-radius: 5px;
+      color: #171d35;
+      background: #f7fafc;
+      margin-bottom: 1rem;
+      font-size: 0.9rem;
+      outline: none; }
+  .task__body {
+    padding: 20px;
+    max-height: 436px;
+    overflow-y: auto; }
+  .task__list {
+    list-style: none; }
+    .task__list li {
+      display: flex;
+      justify-content: space-between;
+      padding: 15px 8px;
+      border-radius: 5px;
+      margin-bottom: 0.5rem;
+      box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px; }
+      .task__list li p {
+        font-size: 1.1rem; }
+      .task__list li span {
+        font-size: 0.85rem;
+        font-style: italic; }
 
 .calender {
   border-radius: 5px;
@@ -59,9 +156,10 @@ body {
       font-size: 1.5rem;
       cursor: pointer;
       margin: 0px 0.3rem;
-      background-color: white;
+      background-color: #ffffff;
       color: #171d35;
-      border-radius: 50%; }
+      border-radius: 50%;
+      color: #56b9ca; }
   .calender__weeks {
     margin-bottom: 1rem;
     font-weight: bold; }
@@ -89,16 +187,28 @@ body {
     margin-bottom: 1rem; }
     .calender__days .inactive {
       opacity: 0.5; }
-    .calender__days li::before {
-      position: absolute;
-      content: '';
-      height: 2.5rem;
-      width: 2.5rem;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      border-radius: 50%;
-      z-index: -1; }
+    .calender__days li {
+      position: relative; }
+      .calender__days li::before {
+        position: absolute;
+        content: '';
+        height: 2.3rem;
+        width: 2.3rem;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 50%;
+        z-index: -1; }
+      .calender__days li span {
+        position: absolute;
+        top: 3px;
+        right: 0px;
+        font-size: 0.8rem;
+        color: #ffffff; }
+      .calender__days li .on {
+        background-color: #04aa6d; }
+      .calender__days li .expired {
+        background-color: crimson; }
     .calender__days .active {
       font-weight: 500;
       cursor: pointer;

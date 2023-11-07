@@ -1,6 +1,8 @@
+import { groupTasksByDueDate } from './task.js';
+
 const currentDate = document.querySelector('.calender__current');
 const daysElement = document.querySelector('.calender__days');
-const prevNextIcon = document.querySelectorAll('.icons span');
+const prevNextIcon = document.querySelectorAll('.calender__icons span');
 
 let date = new Date();
 let currYear = date.getFullYear();
@@ -27,7 +29,6 @@ const setCurrentDate = () => {
   let lastDayOfMonth = new Date(currYear, currMonth, lastDateOfMonth).getDay();
   let lastDateOfLastMonth = new Date(currYear, currMonth, 0).getDate();
 
-  console.log(firstDayOfMonth, lastDateOfMonth, lastDateOfLastMonth);
   daysElement.innerHTML = '';
 
   for (let i = firstDayOfMonth; i > 0; i--) {
@@ -70,3 +71,35 @@ prevNextIcon.forEach((icon) => {
     setCurrentDate();
   });
 });
+
+// Function to check tasks and display the count
+function displayTaskCounts() {
+  const tasksByDueDate = groupTasksByDueDate();
+  const dayElements = document.querySelectorAll('.calender__days li');
+  const today = new Date();
+
+  dayElements.forEach((dayElement) => {
+    const dayDate = new Date(
+      currYear,
+      currMonth,
+      parseInt(dayElement.textContent, 10)
+    ).toDateString();
+    const tasksForDay = tasksByDueDate[dayDate];
+    const spanElement = document.createElement('span');
+
+    if (tasksForDay) {
+      spanElement.textContent = ` ${tasksForDay.length}`;
+
+      // Check if the day is in the past
+      if (today > new Date(dayDate)) {
+        spanElement.classList.add('expired');
+      } else {
+        spanElement.classList.add('on');
+      }
+    }
+
+    dayElement.appendChild(spanElement);
+  });
+}
+
+displayTaskCounts();

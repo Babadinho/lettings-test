@@ -15,10 +15,11 @@ body {
 .main {
   max-width: 1250px;
   margin: auto;
+  padding: 20px;
 
   &__row {
     display: grid;
-    grid-template-columns: auto auto;
+    grid-template-columns: 1fr 1fr;
     gap: 2rem;
     margin-top: 2rem;
   }
