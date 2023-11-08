@@ -8,5 +8,5 @@ window.onload = function () {
 };
 document.getElementById('checkbox').addEventListener('change', () => {
   document.body.classList.toggle('dark-mode');
-  localStorage.lightMode = localStorage.lightMode == 'true' ? 'false' : 'true';
+  localStorage.lightMode = localStorage.darkMode == 'true' ? 'false' : 'true';
 });
