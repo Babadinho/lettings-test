@@ -1,4 +1,3 @@
-// light mode and save to local storage
 window.onload = function () {
   if (localStorage.lightMode == 'true') {
     document.body.classList.toggle('dark-mode');

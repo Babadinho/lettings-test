@@ -51,6 +51,33 @@ function createTaskElement(taskText, dueDate) {
   tasksList.appendChild(taskItem);
 }
 
+// function to add task from modal
+addTaskButtonModal.addEventListener('click', () => {
+  const taskText = taskInputModal.value;
+  const dueDate = taskDueDateInput._flatpickr.selectedDates[0];
+
+  const noTasksMessage = tasksList.querySelector('p');
+  if (noTasksMessage && tasksList.querySelectorAll('li').length === 0) {
+    tasksList.removeChild(noTasksMessage);
+  }
+
+  if (taskText.trim() !== '' && dueDate) {
+    createTaskElement(taskText, dueDate);
+    taskInputModal.value = '';
+    taskDueDateInput._flatpickr.clear();
+    taskModal.style.display = 'none';
+    saveTasks();
+  } else {
+    alert('Please enter a task and select a due date.');
+  }
+});
+
+flatpickr(taskDueDateInput, {
+  enableTime: true,
+  dateFormat: 'Y-m-d H:i',
+  altFormat: 'F j, Y',
+});
+
 function deleteTask(taskItem) {
   const taskElements = tasksList.querySelectorAll('li');
   const tasks = Array.from(taskElements).filter(
@@ -87,32 +114,6 @@ window.addEventListener('click', (event) => {
   if (event.target === taskModal) {
     taskModal.style.display = 'none';
   }
-});
-
-addTaskButtonModal.addEventListener('click', () => {
-  const taskText = taskInputModal.value;
-  const dueDate = taskDueDateInput._flatpickr.selectedDates[0];
-
-  const noTasksMessage = tasksList.querySelector('p');
-  if (noTasksMessage && tasksList.querySelectorAll('li').length === 0) {
-    tasksList.removeChild(noTasksMessage);
-  }
-
-  if (taskText.trim() !== '' && dueDate) {
-    createTaskElement(taskText, dueDate);
-    taskInputModal.value = '';
-    taskDueDateInput._flatpickr.clear();
-    taskModal.style.display = 'none';
-    saveTasks();
-  } else {
-    alert('Please enter a task and select a due date.');
-  }
-});
-
-flatpickr(taskDueDateInput, {
-  enableTime: true,
-  dateFormat: 'Y-m-d H:i',
-  altFormat: 'F j, Y',
 });
 
 // group tasks by due date

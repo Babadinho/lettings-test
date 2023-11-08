@@ -1,6 +1,5 @@
 const newsList = document.querySelector('.news__list');
 
-// Function to fetch top stories
 async function fetchTopStories() {
   const response = await fetch(
     'https://hacker-news.firebaseio.com/v0/topstories.json'
@@ -9,7 +8,6 @@ async function fetchTopStories() {
   return topStoryIds.slice(0, 12);
 }
 
-// Function to fetch story details
 async function fetchStoryDetails(storyId) {
   const response = await fetch(
     `https://hacker-news.firebaseio.com/v0/item/${storyId}.json`
@@ -18,7 +16,6 @@ async function fetchStoryDetails(storyId) {
   return storyDetails;
 }
 
-// function to format API date & time
 function unixTimestampToDateTime(unixTimestamp) {
   const date = new Date(unixTimestamp * 1000);
   const options = {
@@ -31,7 +28,6 @@ function unixTimestampToDateTime(unixTimestamp) {
   return date.toLocaleDateString('en-US', options);
 }
 
-// Function to display top stories
 async function displayTopStories() {
   const topStoryIds = await fetchTopStories();
 
