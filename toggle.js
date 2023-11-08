@@ -1,5 +1,5 @@
 window.onload = function () {
-  if (localStorage.lightMode == 'true') {
+  if (localStorage.darkMode == 'true') {
     document.body.classList.toggle('dark-mode');
     document.getElementById('checkbox').checked = true;
   } else {
@@ -8,5 +8,5 @@ window.onload = function () {
 };
 document.getElementById('checkbox').addEventListener('change', () => {
   document.body.classList.toggle('dark-mode');
-  localStorage.lightMode = localStorage.darkMode == 'true' ? 'false' : 'true';
+  localStorage.darkMode = localStorage.darkMode == 'true' ? 'false' : 'true';
 });
