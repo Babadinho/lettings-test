@@ -46,6 +46,11 @@ header {
     color: #f7fafc;
     font-size: 0.95rem;
     display: block; }
+  header .logout {
+    font-size: 2rem;
+    cursor: pointer;
+    color: #1a202c;
+    padding-right: 0.4rem; }
 
 body {
   font-family: 'Poppins', sans-serif;
@@ -513,6 +518,8 @@ body {
     color: #f7fafc;
     border: none; }
   .dark-mode .faq h2 {
+    color: #f7fafc; }
+  .dark-mode .logout {
     color: #f7fafc; }
 
 @keyframes moveInUnder {

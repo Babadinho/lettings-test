@@ -59,6 +59,13 @@ header {
     font-size: 0.95rem;
     display: block;
   }
+
+  .logout {
+    font-size: 2rem;
+    cursor: pointer;
+    color: $color-dark;
+    padding-right: 0.4rem;
+  }
 }
 
 body {
