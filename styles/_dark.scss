@@ -132,6 +132,11 @@
     & h2 {
       color: $color-light;
     }
+
+    &__item {
+      background-color: $color-gray;
+      color: $color-white;
+    }
   }
 
   .logout {
