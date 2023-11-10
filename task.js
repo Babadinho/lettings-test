@@ -1,3 +1,4 @@
+import { updateTaskCounts } from './calender.js';
 const addTaskButtonModal = document.querySelector('.task__modal--button');
 const taskInputModal = document.querySelector('.task__modal--input');
 const tasksList = document.querySelector('.task__list');
@@ -67,6 +68,7 @@ addTaskButtonModal.addEventListener('click', () => {
     taskDueDateInput._flatpickr.clear();
     taskModal.style.display = 'none';
     saveTasks();
+    updateTaskCounts();
   } else {
     alert('Please enter a task and select a due date.');
   }

@@ -103,3 +103,7 @@ function displayTaskCounts() {
 }
 
 displayTaskCounts();
+
+export function updateTaskCounts() {
+  displayTaskCounts();
+}
