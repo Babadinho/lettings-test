@@ -435,7 +435,7 @@ body {
         transform: rotate(180deg) !important;
         transition: transform 0.3s ease-in; }
     .faq__item p {
-      font-size: 0.95rem; }
+      font-size: 1rem; }
   .faq__question {
     display: flex;
     justify-content: space-between;
