@@ -1,0 +1,26 @@
+.footer {
+  background-color: $color-white;
+  margin: auto;
+  margin-top: 10rem;
+  position: sticky;
+  top: 100%;
+
+  &__wrapper {
+    max-width: 1250px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    padding: 25px;
+
+    & p {
+      font-size: 1rem;
+    }
+
+    & span {
+      & a {
+        text-decoration: none;
+        color: $color-blue;
+      }
+    }
+  }
+}

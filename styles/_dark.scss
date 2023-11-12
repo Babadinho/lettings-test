@@ -142,4 +142,17 @@
   .logout {
     color: $color-light;
   }
+
+  .footer {
+    background-color: $color-gray;
+    &__wrapper {
+      color: $color-light;
+
+      & span {
+        & a {
+          color: $color-blue;
+        }
+      }
+    }
+  }
 }

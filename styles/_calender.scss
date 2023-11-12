@@ -94,9 +94,14 @@
       & span {
         position: absolute;
         top: 6px;
-        right: 11px;
-        font-size: 0.7rem;
+        right: 9px;
+        font-size: 0.6rem;
         color: $color-white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 17px;
+        width: 17px;
       }
 
       & .upcoming {
@@ -104,7 +109,6 @@
         font-weight: 600;
         background-color: $color-green;
         border-radius: 1rem;
-        padding: 2px 5px;
       }
 
       & .expired {
@@ -112,7 +116,6 @@
         font-weight: 600;
         background-color: $color-yellow;
         border-radius: 1rem;
-        padding: 2px 5px;
       }
     }
 
